@@ -18,10 +18,16 @@ echo f(1,2);
 
 <?php
 // $arr という配列の仮引数を持ち、数値が入った配列array(1, 3, 5 ,7, 9) を渡すとその要素をすべてかけた結果を返す関数
-function arr($a,$b,$c,$d,$e){
-    return $a * $b * $c * $d * $e;
+function multiplyArray(array$array): float{
+    $num = 1;
+    foreach ($array as $value){
+        $num *= $value;
+    }    
+    return $num;
 }
-echo arr(1,3,5,7,9);
+$list = [1,3,5,7,9];
+$result = multiplyArray($list);
+print("配列の計算結果:".$result);
 ?>
 
 <?php
